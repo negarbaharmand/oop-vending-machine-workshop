@@ -2,17 +2,18 @@ package org.example.data;
 
 import org.example.model.Product;
 
-public interface vendingMachine {
+public interface IVendingMachine {
 
     void addCurrency(int amount);
 
     int getBalance();
 
-    Product request(int id);
+    Product request(String id);
+
 
     int endSession();
 
-    String getDescription(int id);
+    String getDescription(String id);
 
     String[] getProducts();
 
