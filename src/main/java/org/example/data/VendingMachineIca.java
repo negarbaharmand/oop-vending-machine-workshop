@@ -38,7 +38,7 @@ public class VendingMachineIca implements IVendingMachine {
         for (Product product : products) {
             if (product.getId().equals(id) && depositPool >= product.getPrice()) {
                 depositPool -= product.getPrice();
-                return product;
+                System.out.println("You successfully bought the " + product.getProductName());
             }
         }
         return null;
@@ -48,7 +48,9 @@ public class VendingMachineIca implements IVendingMachine {
     public int endSession() {
         int change = depositPool;
         depositPool = 0;
+        System.out.println("Your change is " + change);
         return change;
+
     }
 
     @Override
